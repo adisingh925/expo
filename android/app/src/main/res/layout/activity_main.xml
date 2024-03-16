@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/formula1"
+        android:layout_width="150dp"
+        android:text="Formula 1"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/motogp"
+        android:layout_width="150dp"
+        android:text="MotoGP"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/wec"
+        android:layout_width="150dp"
+        android:text="WEC"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/formula2"
+        android:layout_width="150dp"
+        android:text="Formula 2"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/formulae"
+        android:layout_width="150dp"
+        android:text="Formula E"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/f1academy"
+        android:layout_width="150dp"
+        android:text="F1 Academy"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="start|center"
+        android:layout_height="50dp"/>
+
+</LinearLayout>
