@@ -2,11 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import { Button, StyleSheet, Text, View } from "react-native";
 import {NativeModules} from 'react-native';
 const {WidgetModule} = NativeModules;
+import Response from './android/app/src/main/java/com/anonymous/myapp/response.json';
 
 export default function App() {
   const onPress = () => {
     console.log("We will invoke the native module here!");
-    WidgetModule.updateSmallCalenderWidget('testName', 'testLocation');
+    WidgetModule.updateSmallCalenderWidget('testName', 'testLocation', JSON.stringify(Response));
   };
 
   return (

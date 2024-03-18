@@ -7,7 +7,7 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
-
+import com.anonymous.myapp.sharedpreferences.SharedPreferences
 import expo.modules.ReactActivityDelegateWrapper
 
 class MainActivity : ReactActivity() {
@@ -17,6 +17,7 @@ class MainActivity : ReactActivity() {
     // This is required for expo-splash-screen.
     setTheme(R.style.AppTheme);
     super.onCreate(null)
+    SharedPreferences.init(this)
   }
 
   /**

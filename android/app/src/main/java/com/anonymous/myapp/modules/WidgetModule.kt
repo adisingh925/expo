@@ -8,6 +8,7 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import android.content.ComponentName
+import com.anonymous.myapp.sharedpreferences.SharedPreferences
 
 class WidgetModule(private var reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
@@ -17,8 +18,9 @@ class WidgetModule(private var reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun updateSmallCalenderWidget(name: String, location: String) {
-        Log.d("CalendarModule", "Create event called with name: $name and location: $location")
+    fun updateSmallCalenderWidget(name: String, location: String, apiData : String) {
+        Log.d("CalendarModule", "Create event called with name: $name and location: $location and jsondata: $apiData")
+        SharedPreferences.write("championshipData", apiData)
         val intent: Intent = Intent(reactContext, CalenderWidgetSmall::class.java)
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
         val ids: IntArray? = AppWidgetManager.getInstance(reactContext).getAppWidgetIds(ComponentName(reactContext, CalenderWidgetSmall::class.java))
