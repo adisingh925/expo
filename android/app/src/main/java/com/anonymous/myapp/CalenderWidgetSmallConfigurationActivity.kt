@@ -9,7 +9,9 @@ import android.widget.RemoteViews
 import android.content.Intent
 import android.app.Activity
 import android.widget.TextView
-
+import com.anonymous.myapp.sharedpreferences.SharedPreferences
+import com.anonymous.myapp.widgetprovider.CalenderWidgetSmall
+import android.content.ComponentName
 
 class CalenderWidgetSmallConfigurationActivity : AppCompatActivity() {
 
@@ -48,51 +50,57 @@ class CalenderWidgetSmallConfigurationActivity : AppCompatActivity() {
         val views = RemoteViews(this.packageName, R.layout.calender_widget_small)
 
         formula1.setOnClickListener {
-            views.setTextViewText(R.id.round, "formula 1")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "f1")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
 
         motogp.setOnClickListener {
-            views.setTextViewText(R.id.round, "moto gp")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "motogp")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
 
         wec.setOnClickListener {
-            views.setTextViewText(R.id.round, "wec")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "wec")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
 
         formula2.setOnClickListener {
-            views.setTextViewText(R.id.round, "formula 2")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "f2")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
 
         formulae.setOnClickListener {
-            views.setTextViewText(R.id.round, "formula e")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "fe")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
 
         f1academy.setOnClickListener {
-            views.setTextViewText(R.id.round, "f1 academy")
-            appWidgetManager.updateAppWidget(appWidgetId, views)   
-
-            val resultValue = Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
-            setResult(Activity.RESULT_OK, resultValue)
+            SharedPreferences.write(appWidgetId.toString(), "f1-academy")
+            val intent: Intent = Intent(this, CalenderWidgetSmall::class.java)
+            intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            val ids: IntArray? = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, CalenderWidgetSmall::class.java))
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            this.sendBroadcast(intent)
         }
     }
 }
