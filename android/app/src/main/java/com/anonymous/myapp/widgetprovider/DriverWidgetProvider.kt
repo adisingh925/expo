@@ -1,7 +1,6 @@
 package com.anonymous.myapp.widgetprovider
 
 import android.appwidget.AppWidgetProvider
-import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.appwidget.AppWidgetManager
 import android.widget.RemoteViews
