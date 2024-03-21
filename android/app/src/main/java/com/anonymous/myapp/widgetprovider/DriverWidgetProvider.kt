@@ -28,6 +28,7 @@ import java.io.InputStreamReader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.core.content.res.ResourcesCompat
 
 class DriverWidgetProvider : AppWidgetProvider() {
 
@@ -89,5 +90,30 @@ class DriverWidgetProvider : AppWidgetProvider() {
                 connection.disconnect()
             }
         }
+    }
+
+    fun buildUpdate(
+        time: String?,
+        context: Context,
+        textSize: Float,
+        font: Int,
+        color: Int,
+        alignment: Paint.Align,
+        x: Float,
+        width: Int
+    ): Bitmap {
+        val myBitmap = Bitmap.createBitmap(width, 44, Bitmap.Config.ARGB_8888)
+        val myCanvas = Canvas(myBitmap)
+        val paint = Paint()
+        val clock = ResourcesCompat.getFont(context, font);
+        paint.isAntiAlias = true
+        paint.isSubpixelText = true
+        paint.setTypeface(clock)
+        paint.style = Paint.Style.FILL
+        paint.setColor(color)
+        paint.textSize = textSize
+        paint.textAlign = alignment
+        myCanvas.drawText(time!!, x, 40f, paint)
+        return myBitmap
     }
 }
