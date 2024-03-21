@@ -28,6 +28,7 @@ import java.io.InputStreamReader
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import androidx.core.content.res.ResourcesCompat
 
 class TeamWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
@@ -81,13 +82,194 @@ class TeamWidgetProvider : AppWidgetProvider() {
                             " · $driver" // Append subsequent driver names with a middle dot separator
                         }
                     }
-                    views.setTextViewText(R.id.driver_name, drivers)
-                    views.setTextViewText(R.id.round, parsedApiData.getString("name"))
-                    views.setTextViewText(R.id.position, parsedApiData.getString("position"))
-                    views.setTextViewText(R.id.points, parsedApiData.getString("points"))
-                    views.setTextViewText(R.id.pole, parsedApiData.getString("pole"))
-                    views.setTextViewText(R.id.podi, parsedApiData.getString("podium"))
-                    views.setTextViewText(R.id.wins, parsedApiData.getString("win"))
+
+                    var font = R.font.f1_bold
+                    var color = Color.parseColor("#FF0000")
+                    var fontSizeOffset = 0
+
+                    views.setImageViewBitmap(
+                        R.id.round,
+                        buildUpdate(
+                            parsedApiData.getString("name").split(" ")[0],
+                            context,
+                            40f + fontSizeOffset.toFloat(),
+                            font,
+                            Color.parseColor("#ffffff"),
+                            Align.LEFT,
+                            0f,
+                            300
+                        )
+                    )
+
+                    views.setImageViewBitmap(
+                        R.id.round1,
+                        buildUpdate(
+                            parsedApiData.getString("name").split(" ")[1],
+                            context,
+                            40f + fontSizeOffset.toFloat(),
+                            font,
+                            Color.parseColor("#ffffff"),
+                            Align.LEFT,
+                            0f,
+                            300
+                        )
+                    )
+
+                    views.setImageViewBitmap(
+                        R.id.driver_name,
+                        buildUpdate(
+                            drivers,
+                            context,
+                            30f + fontSizeOffset.toFloat(),
+                            font,
+                            color,
+                            Align.LEFT,
+                            0f,
+                            300
+                        )
+                    )
+
+                    views.setImageViewBitmap(
+                                R.id.position,
+                                buildUpdate(
+                                    parsedApiData.getString("position"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.points,
+                                buildUpdate(
+                                    parsedApiData.getString("points"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.position_text,
+                                buildUpdate(
+                                    "POS",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.points_text,
+                                buildUpdate(
+                                    "PT",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.pole,
+                                buildUpdate(
+                                    parsedApiData.getString("pole"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.podi,
+                                buildUpdate(
+                                    parsedApiData.getString("podium"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.wins,
+                                buildUpdate(
+                                    parsedApiData.getString("win"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.wins_text,
+                                buildUpdate(
+                                    "Vittorie",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.podi_text,
+                                buildUpdate(
+                                    "Podi",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.pole_text,
+                                buildUpdate(
+                                    "Pole",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                    
                     appWidgetManager?.updateAppWidget(appWidgetId, views)
                 } else {
                     println("HTTP request failed with response code: $responseCode")
@@ -96,5 +278,30 @@ class TeamWidgetProvider : AppWidgetProvider() {
                 connection.disconnect()
             }
         }
+    }
+
+    fun buildUpdate(
+        time: String?,
+        context: Context,
+        textSize: Float,
+        font: Int,
+        color: Int,
+        alignment: Paint.Align,
+        x: Float,
+        width: Int
+    ): Bitmap {
+        val myBitmap = Bitmap.createBitmap(width, 44, Bitmap.Config.ARGB_8888)
+        val myCanvas = Canvas(myBitmap)
+        val paint = Paint()
+        val clock = ResourcesCompat.getFont(context, font);
+        paint.isAntiAlias = true
+        paint.isSubpixelText = true
+        paint.setTypeface(clock)
+        paint.style = Paint.Style.FILL
+        paint.setColor(color)
+        paint.textSize = textSize
+        paint.textAlign = alignment
+        myCanvas.drawText(time!!, x, 40f, paint)
+        return myBitmap
     }
 }

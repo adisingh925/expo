@@ -9,25 +9,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_weight="0.7"
+        android:layout_weight="0.8"
         android:layout_height="0dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/round"
             android:layout_width="80dp"
-            android:text="Scuderia Ferrari"
+            android:text="Scuderia"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="15sp"
             android:layout_alignParentStart="true"
             android:layout_height="wrap_content"/>
 
-        <TextView
+        <ImageView
+            android:id="@+id/round1"
+            android:layout_width="80dp"
+            android:text="Ferrari"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_alignParentStart="true"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
             android:id="@+id/driver_name"
             android:layout_width="wrap_content"
             android:text="LEC·SAI"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:layout_alignParentStart="true"
             android:textColor="#FF0000"
             android:layout_height="wrap_content"/>
 
@@ -45,7 +56,7 @@
             android:layout_alignParentStart="true"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
                 android:id="@+id/position"
                 android:layout_width="match_parent"
                 android:gravity="center"
@@ -55,7 +66,8 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/position_text"
                 android:layout_width="wrap_content"
                 android:text="POS"
                 android:textColor="#4972b4"
@@ -71,7 +83,7 @@
             android:layout_alignParentEnd="true"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
                 android:id="@+id/points"
                 android:layout_width="40dp"
                 android:text="27"
@@ -81,7 +93,8 @@
                 android:textStyle="bold"
                 android:layout_height="wrap_content"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/points_text"
                 android:layout_width="40dp"
                 android:text="PT"
                 android:gravity="center"
@@ -108,7 +121,7 @@
             android:gravity="center"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
                 android:id="@+id/pole"
                 android:layout_width="wrap_content"
                 android:text="0"
@@ -117,7 +130,8 @@
                 android:textSize="20sp"
                 android:layout_height="wrap_content"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/pole_text"
                 android:layout_width="wrap_content"
                 android:text="Pole"
                 android:textColor="#4972b4"
@@ -134,7 +148,7 @@
             android:gravity="center"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
                 android:id="@+id/podi"
                 android:layout_width="wrap_content"
                 android:text="1"
@@ -143,7 +157,8 @@
                 android:textSize="20sp"
                 android:layout_height="wrap_content"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/podi_text"
                 android:layout_width="wrap_content"
                 android:text="Podi"
                 android:textSize="8sp"
@@ -160,7 +175,7 @@
             android:gravity="center"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
                 android:id="@+id/wins"
                 android:layout_width="wrap_content"
                 android:text="0"
@@ -169,7 +184,8 @@
                 android:textSize="20sp"
                 android:layout_height="wrap_content"/>
 
-            <TextView
+            <ImageView
+                android:id="@+id/wins_text"
                 android:layout_width="wrap_content"
                 android:text="Vittorie"
                 android:textSize="8sp"
