@@ -73,15 +73,207 @@ class DriverWidgetProvider : AppWidgetProvider() {
 
                     println("Response: ${response.toString()}")
                     val parsedApiData = JSONObject(response.toString())
-                    views.setTextViewText(R.id.name, parsedApiData.getString("name"))
-                    views.setTextViewText(R.id.surname, parsedApiData.getString("surname"))
-                    views.setTextViewText(R.id.number, parsedApiData.getString("number"))
-                    views.setTextViewText(R.id.team, parsedApiData.getString("team"))
-                    views.setTextViewText(R.id.position, parsedApiData.getString("position"))
-                    views.setTextViewText(R.id.points, parsedApiData.getString("points"))
-                    views.setTextViewText(R.id.pole, parsedApiData.getString("pole"))
-                    views.setTextViewText(R.id.podi, parsedApiData.getString("podium"))
-                    views.setTextViewText(R.id.wins, parsedApiData.getString("win"))
+                    
+                    var font = R.font.f1_bold
+                    var color = Color.parseColor("#FF0000")
+                    var fontSizeOffset = 0
+                    
+                    views.setImageViewBitmap(
+                                R.id.name,
+                                buildUpdate(
+                                    parsedApiData.getString("name"),
+                                    context,
+                                    35f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.LEFT,
+                                    0f,
+                                    300
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.surname,
+                                buildUpdate(
+                                    parsedApiData.getString("surname"),
+                                    context,
+                                    35f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.LEFT,
+                                    0f,
+                                    300
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.number,
+                                buildUpdate(
+                                    parsedApiData.getString("number"),
+                                    context,
+                                    25f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.LEFT,
+                                    0f,
+                                    40
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.team,
+                                buildUpdate(
+                                    parsedApiData.getString("team"),
+                                    context,
+                                    25f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#ffffff"),
+                                    Align.LEFT,
+                                    0f,
+                                    300
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.position,
+                                buildUpdate(
+                                    parsedApiData.getString("position"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.points,
+                                buildUpdate(
+                                    parsedApiData.getString("points"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.position_text,
+                                buildUpdate(
+                                    "POS",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.point_text,
+                                buildUpdate(
+                                    "PT",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.pole,
+                                buildUpdate(
+                                    parsedApiData.getString("pole"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.podi,
+                                buildUpdate(
+                                    parsedApiData.getString("podium"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.wins,
+                                buildUpdate(
+                                    parsedApiData.getString("win"),
+                                    context,
+                                    40f + fontSizeOffset.toFloat(),
+                                    font,
+                                    color,
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.wins_text,
+                                buildUpdate(
+                                    "Vittorie",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.podi_text,
+                                buildUpdate(
+                                    "Podi",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+
+                            views.setImageViewBitmap(
+                                R.id.pole_text,
+                                buildUpdate(
+                                    "Pole",
+                                    context,
+                                    20f + fontSizeOffset.toFloat(),
+                                    font,
+                                    Color.parseColor("#4972b4"),
+                                    Align.CENTER,
+                                    50f,
+                                    95
+                                )
+                            )
+                
                     appWidgetManager?.updateAppWidget(appWidgetId, views)
                 } else {
                     println("HTTP request failed with response code: $responseCode")
