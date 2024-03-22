@@ -16,23 +16,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/round"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:text="ROUND 2"
                 android:textColor="@color/white" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/date_range"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_alignParentEnd="true"
-                android:text="7-9 MAR" />
+                android:text="7-9 MAR"
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 
-        <TextView
+        <ImageView
+            android:id="@+id/country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Saudi Arabia"
@@ -43,14 +46,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/other_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:text="FP1"
                 android:textColor="#4972b4" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/current_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -59,7 +64,8 @@
 
         </RelativeLayout>
 
-        <TextView
+        <ImageView
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
@@ -78,7 +84,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/days"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -86,7 +93,8 @@
                     android:textColor="#FF0000"
                     android:textSize="20sp" />
 
-                <TextView
+                <ImageView
+                    android:id="@+id/days_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -101,7 +109,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/hours"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -109,7 +118,8 @@
                     android:textColor="#FF0000"
                     android:textSize="20sp" />
 
-                <TextView
+                <ImageView
+                    android:id="@+id/hours_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -124,7 +134,8 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/mins"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -132,7 +143,8 @@
                     android:textColor="#FF0000"
                     android:textSize="20sp" />
 
-                <TextView
+                <ImageView
+                    android:id="@+id/mins_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -147,65 +159,67 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="3dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
             android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#FF0000" />
 
         <LinearLayout
             android:layout_width="3dp"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
             android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#FF0000" />
 
         <LinearLayout
             android:layout_width="3dp"
-            android:layout_weight="1"
             android:layout_height="0dp"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#FF0000" />
 
         <LinearLayout
             android:layout_width="3dp"
-            android:layout_weight="1"
             android:layout_height="0dp"
             android:layout_margin="4dp"
+            android:layout_weight="1"
             android:background="#FF0000" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="0.5"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_weight="0.5"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next1_date"
                 android:layout_width="wrap_content"
-                android:text="7"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="7"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next1_other_name"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="FP2"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -213,44 +227,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next1_name"
                 android:layout_width="wrap_content"
-                android:text="GIO"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="GIO"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next1_time"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="18.00"
-                android:textSize="12sp"
                 android:textColor="#4972b4"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next2_date"
                 android:layout_width="wrap_content"
-                android:text="8"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="8"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next2_other_name"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="FP3"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -258,44 +276,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next2_name"
                 android:layout_width="wrap_content"
-                android:text="VEN"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="VEN"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next2_time"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="14.30"
-                android:textSize="12sp"
                 android:textColor="#4972b4"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next3_date"
                 android:layout_width="wrap_content"
-                android:text="8"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="8"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next3_other_name"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="Quali"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -303,44 +325,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next3_name"
                 android:layout_width="wrap_content"
-                android:text="VEN"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="VEN"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next3_time"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="18.00"
-                android:textSize="12sp"
                 android:textColor="#4972b4"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next4_date"
                 android:layout_width="wrap_content"
-                android:text="9"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="9"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next4_other_name"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="Race"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -348,21 +374,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
+            <ImageView
+                android:id="@+id/next4_name"
                 android:layout_width="wrap_content"
-                android:text="SAB"
-                android:textSize="12sp"
-                android:textColor="#4972b4"
+                android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_height="wrap_content"/>
+                android:text="SAB"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
 
-            <TextView
+            <ImageView
+                android:id="@+id/next4_time"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="18.00"
-                android:textSize="12sp"
                 android:textColor="#4972b4"
-                android:layout_height="wrap_content"/>
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
