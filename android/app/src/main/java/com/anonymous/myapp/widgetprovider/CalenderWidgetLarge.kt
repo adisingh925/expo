@@ -99,6 +99,12 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                         val parsedDate1 = dateFormat.parse(date1)
                         val formattedDate = SimpleDateFormat("EEE", locale).format(parsedDate1).toUpperCase(Locale.getDefault())
 
+                        color = Color.parseColor(country.getString("color"))
+                        views.setInt(R.id.l1, "setBackgroundColor", color);
+                        views.setInt(R.id.l2, "setBackgroundColor", color);
+                        views.setInt(R.id.l3, "setBackgroundColor", color);
+                        views.setInt(R.id.l4, "setBackgroundColor", color);
+
                         if (date == 0) {
                             views.setImageViewBitmap(
                                 R.id.next1_date,
@@ -343,7 +349,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     color,
                                     Align.LEFT,
                                     0f,
-                                    300
+                                    400
                                 )
                             )
                             views.setImageViewBitmap(
