@@ -83,9 +83,41 @@ class TeamWidgetProvider : AppWidgetProvider() {
                         }
                     }
 
-                    var font = R.font.f1_bold
-                    var color = Color.parseColor("#FF0000")
+                    var font = -1
                     var fontSizeOffset = 0
+                    var color = Color.parseColor(parsedApiData.getString("color"))
+
+                    when (parsedApiData.getString("championship_code")) {
+                        "f1" -> {
+                            font = R.font.f1_bold
+                        }
+
+                        "motogp" -> {
+                            font = R.font.motogp_bold
+                            fontSizeOffset += 10
+                        }
+
+                        "wec" -> {
+                            font = R.font.wec_bold
+                        }
+
+                        "f2" -> {
+                            font = R.font.f2_bold
+                        }
+
+                        "fe" -> {
+                            font = R.font.fe_bold
+                        }
+
+                        "f1-academy" -> {
+                            font = R.font.tt_bold
+                            fontSizeOffset += 10
+                        }
+
+                        else -> {
+                            font = R.font.f1_bold
+                        }
+                    }
 
                     views.setImageViewBitmap(
                         R.id.round,
