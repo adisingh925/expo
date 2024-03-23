@@ -4,6 +4,9 @@ import android.appwidget.AppWidgetManager
 import android.content.Intent
 import android.util.Log
 import com.anonymous.myapp.widgetprovider.CalenderWidgetSmall
+import com.anonymous.myapp.widgetprovider.TeamWidgetProvider
+import com.anonymous.myapp.widgetprovider.DriverWidgetProvider
+import com.anonymous.myapp.widgetprovider.CalenderWidgetLarge
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
@@ -18,12 +21,52 @@ class WidgetModule(private var reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun updateSmallCalenderWidget(name: String, location: String, apiData : String) {
-        Log.d("CalendarModule", "Create event called with name: $name and location: $location and jsondata: $apiData")
+    fun storeApiData(apiData : String) {
         SharedPreferences.write("championshipData", apiData)
+        updateSmallCalenderWidgets()
+        updateLargeCalenderWidgets()
+    }
+
+    @ReactMethod
+    fun updateSmallCalenderWidgets() {
         val intent: Intent = Intent(reactContext, CalenderWidgetSmall::class.java)
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
         val ids: IntArray? = AppWidgetManager.getInstance(reactContext).getAppWidgetIds(ComponentName(reactContext, CalenderWidgetSmall::class.java))
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        reactContext.sendBroadcast(intent)
+    }
+
+    @ReactMethod
+    fun updateLargeCalenderWidgets() {
+        val intent: Intent = Intent(reactContext, CalenderWidgetLarge::class.java)
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+        val ids: IntArray? = AppWidgetManager.getInstance(reactContext).getAppWidgetIds(ComponentName(reactContext, CalenderWidgetLarge::class.java))
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        reactContext.sendBroadcast(intent)
+    }
+
+    @ReactMethod
+    fun storeUUIDAndApiKey(uuid : String, apiKey : String) {
+        SharedPreferences.write("uuid", uuid)
+        SharedPreferences.write("apiKey", apiKey)
+        updateTeamWidget()
+        updateDriverWidget()
+    }
+
+    @ReactMethod
+    fun updateDriverWidget() {
+        val intent: Intent = Intent(reactContext, DriverWidgetProvider::class.java)
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+        val ids: IntArray? = AppWidgetManager.getInstance(reactContext).getAppWidgetIds(ComponentName(reactContext, DriverWidgetProvider::class.java))
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        reactContext.sendBroadcast(intent)
+    }
+
+    @ReactMethod
+    fun updateTeamWidget() {
+        val intent: Intent = Intent(reactContext, TeamWidgetProvider::class.java)
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+        val ids: IntArray? = AppWidgetManager.getInstance(reactContext).getAppWidgetIds(ComponentName(reactContext, TeamWidgetProvider::class.java))
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
         reactContext.sendBroadcast(intent)
     }

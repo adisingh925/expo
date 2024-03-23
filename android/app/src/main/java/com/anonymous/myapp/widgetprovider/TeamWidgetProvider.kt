@@ -41,8 +41,10 @@ class TeamWidgetProvider : AppWidgetProvider() {
         appWidgetIds?.forEach { appWidgetId ->
             val views = RemoteViews(context?.packageName, R.layout.team_widget)
             val response: JSONObject = JSONObject()
+            val uuid = SharedPreferences.read("uuid", "")
+            val apiKey = SharedPreferences.read("apiKey", "")
             CoroutineScope(Dispatchers.IO).launch {
-                val url = URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_team_details_and_stats?team_season_driver_id=9e41928d-f87f-48c9-9b9f-ba4969cd6ae2")
+                val url = URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_team_details_and_stats?team_season_driver_id=$uuid")
                 val connection = url.openConnection() as HttpURLConnection
 
                 // Set request method
@@ -52,7 +54,7 @@ class TeamWidgetProvider : AppWidgetProvider() {
                 connection.setRequestProperty("Content-Type", "application/json")
                 connection.setRequestProperty(
                     "apikey",
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcWR3bHl6eHRleGhkbGNoeGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2NDI3MzMsImV4cCI6MjAxODIxODczM30.3iDaj744eR1JwzIGkEj50WkOpkMyFLKUjY6NsmGP8kY"
+                    apiKey
                 )
 
                 // Set connection timeouts
