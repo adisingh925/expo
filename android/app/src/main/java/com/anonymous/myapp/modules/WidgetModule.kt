@@ -16,12 +16,16 @@ import com.anonymous.myapp.sharedpreferences.SharedPreferences
 class WidgetModule(private var reactContext: ReactApplicationContext) :
     ReactContextBaseJavaModule(reactContext) {
 
+    init {
+        SharedPreferences.init(reactContext)
+    }
+
     override fun getName(): String {
         return "WidgetModule"
     }
 
     @ReactMethod
-    fun storeApiData(apiData : String) {
+    fun storeApiData(apiData: String) {
         SharedPreferences.write("championshipData", apiData)
         updateSmallCalenderWidgets()
         updateLargeCalenderWidgets()
@@ -46,11 +50,17 @@ class WidgetModule(private var reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
-    fun storeUUIDAndApiKey(uuid : String, apiKey : String) {
-        SharedPreferences.write("uuid", uuid)
-        SharedPreferences.write("apiKey", apiKey)
-        updateTeamWidget()
+    fun storeDriverWidgetUUIDAndApiKey(uuid: String, apiKey: String) {
+        SharedPreferences.write("driver_uuid", uuid)
+        SharedPreferences.write("driver_apiKey", apiKey)
         updateDriverWidget()
+    }
+
+    @ReactMethod
+    fun storeTeamWidgetUUIDAndApiKey(uuid: String, apiKey: String) {
+        SharedPreferences.write("team_uuid", uuid)
+        SharedPreferences.write("team_apiKey", apiKey)
+        updateTeamWidget()
     }
 
     @ReactMethod

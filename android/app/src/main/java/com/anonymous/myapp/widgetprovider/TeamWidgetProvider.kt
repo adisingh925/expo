@@ -41,8 +41,8 @@ class TeamWidgetProvider : AppWidgetProvider() {
         appWidgetIds?.forEach { appWidgetId ->
             val views = RemoteViews(context?.packageName, R.layout.team_widget)
             val response: JSONObject = JSONObject()
-            val uuid = SharedPreferences.read("uuid", "")
-            val apiKey = SharedPreferences.read("apiKey", "")
+            val uuid = SharedPreferences.read("team_uuid", "")
+            val apiKey = SharedPreferences.read("team_apiKey", "")
             CoroutineScope(Dispatchers.IO).launch {
                 val url = URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_team_details_and_stats?team_season_driver_id=$uuid")
                 val connection = url.openConnection() as HttpURLConnection

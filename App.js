@@ -6,7 +6,8 @@ import Response from './android/app/src/main/java/com/anonymous/myapp/response.j
 
 export default function App() {
   const onPress = () => {
-    WidgetModule.storeUUIDAndApiKey("9e41928d-f87f-48c9-9b9f-ba4969cd6ae2","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcWR3bHl6eHRleGhkbGNoeGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2NDI3MzMsImV4cCI6MjAxODIxODczM30.3iDaj744eR1JwzIGkEj50WkOpkMyFLKUjY6NsmGP8kY")
+    WidgetModule.storeDriverWidgetUUIDAndApiKey("9e41928d-f87f-48c9-9b9f-ba4969cd6ae2","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcWR3bHl6eHRleGhkbGNoeGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2NDI3MzMsImV4cCI6MjAxODIxODczM30.3iDaj744eR1JwzIGkEj50WkOpkMyFLKUjY6NsmGP8kY")
+    WidgetModule.storeTeamWidgetUUIDAndApiKey("9e41928d-f87f-48c9-9b9f-ba4969cd6ae2","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjcWR3bHl6eHRleGhkbGNoeGhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDI2NDI3MzMsImV4cCI6MjAxODIxODczM30.3iDaj744eR1JwzIGkEj50WkOpkMyFLKUjY6NsmGP8kY")
     WidgetModule.storeApiData(JSON.stringify(Response));
   };
 

@@ -41,8 +41,8 @@ class DriverWidgetProvider : AppWidgetProvider() {
         Log.d("TeamWidgetProvider", "onUpdate")
         appWidgetIds?.forEach { appWidgetId ->
             val views = RemoteViews(context?.packageName, R.layout.driver_widget)
-            val uuid = SharedPreferences.read("uuid", "")
-            val apiKey = SharedPreferences.read("apiKey", "")
+            val uuid = SharedPreferences.read("driver_uuid", "")
+            val apiKey = SharedPreferences.read("driver_apiKey", "")
             val response: JSONObject = JSONObject()
             CoroutineScope(Dispatchers.IO).launch {
                 val url =
