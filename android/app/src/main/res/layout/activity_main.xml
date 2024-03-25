@@ -8,61 +8,67 @@
     android:gravity="center"
     android:padding="10dp">
 
-    <TextView
+    <Button
         android:id="@+id/formula1"
         android:layout_width="150dp"
         android:text="Formula 1"
+        android:backgroundTint="#FF6200EE"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
         android:layout_height="50dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/motogp"
         android:layout_width="150dp"
         android:text="MotoGP"
         android:textStyle="bold"
+        android:backgroundTint="#FF6200EE"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
         android:layout_height="50dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/wec"
         android:layout_width="150dp"
         android:text="WEC"
+        android:backgroundTint="#FF6200EE"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
         android:layout_height="50dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/formula2"
         android:layout_width="150dp"
         android:text="Formula 2"
         android:textStyle="bold"
+        android:backgroundTint="#FF6200EE"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
         android:layout_height="50dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/formulae"
         android:layout_width="150dp"
         android:text="Formula E"
         android:textStyle="bold"
+        android:backgroundTint="#FF6200EE"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
         android:layout_height="50dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/f1academy"
         android:layout_width="150dp"
         android:text="F1 Academy"
         android:textStyle="bold"
+        android:backgroundTint="#FF6200EE"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:gravity="start|center"
