@@ -103,7 +103,7 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                                     color,
                                     Align.LEFT,
                                     0f,
-                                    300
+                                    350
                                 )
                             )
                             views.setImageViewBitmap(

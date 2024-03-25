@@ -204,7 +204,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                             context,
                             20f + fontSizeOffset.toFloat(),
                             font,
-                            Color.parseColor("#4972b4"),
+                            Color.parseColor("#808080"),
                             Align.CENTER,
                             50f,
                             95
@@ -218,7 +218,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                             context,
                             20f + fontSizeOffset.toFloat(),
                             font,
-                            Color.parseColor("#4972b4"),
+                            Color.parseColor("#808080"),
                             Align.CENTER,
                             50f,
                             95
@@ -274,7 +274,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                             context,
                             20f + fontSizeOffset.toFloat(),
                             font,
-                            Color.parseColor("#4972b4"),
+                            Color.parseColor("#808080"),
                             Align.CENTER,
                             50f,
                             95
@@ -288,7 +288,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                             context,
                             20f + fontSizeOffset.toFloat(),
                             font,
-                            Color.parseColor("#4972b4"),
+                            Color.parseColor("#808080"),
                             Align.CENTER,
                             50f,
                             95
@@ -302,7 +302,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                             context,
                             20f + fontSizeOffset.toFloat(),
                             font,
-                            Color.parseColor("#4972b4"),
+                            Color.parseColor("#808080"),
                             Align.CENTER,
                             50f,
                             95

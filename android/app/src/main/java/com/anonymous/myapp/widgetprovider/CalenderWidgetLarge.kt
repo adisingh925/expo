@@ -113,7 +113,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -127,7 +127,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    color,
+                                    Color.parseColor("#ffffff"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -141,7 +141,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -155,7 +155,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -171,7 +171,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -185,7 +185,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    color,
+                                    Color.parseColor("#ffffff"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -199,7 +199,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -213,7 +213,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -229,7 +229,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -243,7 +243,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    color,
+                                    Color.parseColor("#ffffff"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -257,7 +257,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -271,7 +271,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -287,7 +287,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -301,7 +301,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    color,
+                                    Color.parseColor("#ffffff"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -315,7 +315,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.LEFT,
                                     0f,
                                     300
@@ -329,7 +329,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     context,
                                     35f + fontSizeOffset.toFloat(),
                                     font,
-                                    Color.parseColor("#4972b4"),
+                                    Color.parseColor("#808080"),
                                     Align.RIGHT,
                                     200f,
                                     210
@@ -349,7 +349,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                     color,
                                     Align.LEFT,
                                     0f,
-                                    400
+                                    450
                                 )
                             )
                             views.setImageViewBitmap(

@@ -27,6 +27,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": []
+    "plugins": [
+      "expo-font",
+      {
+        "fonts": [
+          "./font/Inter-Black.otf"
+        ]
+      }
+    ]
   }
 }
