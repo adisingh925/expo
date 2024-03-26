@@ -8,6 +8,7 @@
     android:targetCellHeight="1"
     android:maxResizeWidth="170dp"
     android:maxResizeHeight="100dp"
+    android:previewImage="@drawable/driver"
     android:previewLayout="@layout/driver_widget"
     android:initialLayout="@layout/driver_widget"
     android:widgetCategory="home_screen" />

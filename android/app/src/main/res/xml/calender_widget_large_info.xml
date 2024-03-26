@@ -8,6 +8,7 @@
     android:targetCellHeight="1"
     android:maxResizeWidth="300dp"
     android:maxResizeHeight="100dp"
+    android:previewImage="@drawable/large_calender"
     android:configure="com.anonymous.myapp.CalenderWidgetLargeConfigurationActivity"
     android:widgetFeatures="reconfigurable|configuration_optional"
     android:previewLayout="@layout/calender_widget_large"

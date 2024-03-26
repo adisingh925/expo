@@ -8,6 +8,7 @@
     android:targetCellHeight="1"
     android:maxResizeWidth="170dp"
     android:maxResizeHeight="100dp"
+    android:previewImage="@drawable/team"
     android:previewLayout="@layout/team_widget"
     android:initialLayout="@layout/team_widget"
     android:widgetCategory="home_screen" />
