@@ -11,7 +11,8 @@ import android.app.Activity
 import com.anonymous.myapp.sharedpreferences.SharedPreferences
 import com.anonymous.myapp.widgetprovider.CalenderWidgetLarge
 import android.content.ComponentName
-import android.widget.Button
+import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 
 class CalenderWidgetLargeConfigurationActivity : AppCompatActivity() {
 
@@ -36,12 +37,20 @@ class CalenderWidgetLargeConfigurationActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val formula1 = findViewById<Button>(R.id.formula1)
-        val motogp = findViewById<Button>(R.id.motogp)
-        val wec = findViewById<Button>(R.id.wec)
-        val formula2 = findViewById<Button>(R.id.formula2)
-        val formulae = findViewById<Button>(R.id.formulae)
-        val f1academy = findViewById<Button>(R.id.f1academy)
+        val formula1 = findViewById<TextView>(R.id.formula1)
+        val motogp = findViewById<TextView>(R.id.motogp)
+        val wec = findViewById<TextView>(R.id.wec)
+        val formula2 = findViewById<TextView>(R.id.formula2)
+        val formulae = findViewById<TextView>(R.id.formulae)
+        val f1academy = findViewById<TextView>(R.id.f1academy)
+
+        formula1.typeface = ResourcesCompat.getFont(this, R.font.f1_bold)
+        motogp.typeface = ResourcesCompat.getFont(this, R.font.motogp_bold)
+        wec.typeface = ResourcesCompat.getFont(this, R.font.wec_bold)
+        formula2.typeface = ResourcesCompat.getFont(this, R.font.f2_bold)
+        formulae.typeface = ResourcesCompat.getFont(this, R.font.fe_bold)
+        f1academy.typeface = ResourcesCompat.getFont(this, R.font.tt_bold)
+
 
         appWidgetId = intent?.extras?.getInt(
             AppWidgetManager.EXTRA_APPWIDGET_ID,

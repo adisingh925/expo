@@ -27,6 +27,7 @@ import java.util.TimeZone
 import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 import java.time.LocalDateTime
+import android.view.View
 
 class CalenderWidgetSmall : AppWidgetProvider() {
     override fun onUpdate(
@@ -81,6 +82,7 @@ class CalenderWidgetSmall : AppWidgetProvider() {
 
             val apiData = SharedPreferences.read("championshipData", "")
             if (apiData != "") {
+                views.setViewVisibility(R.id.sync_data, View.GONE)
                 val parsedApiData = JSONObject(apiData)
                 val championshipArray = parsedApiData.getJSONArray(SharedPreferences.read(appWidgetId.toString(), ""))
                 var startDay = ""
@@ -304,6 +306,8 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                         break
                     }
                 }
+            }else{
+                views.setViewVisibility(R.id.sync_data, View.VISIBLE)
             }
             appWidgetManager?.updateAppWidget(appWidgetId, views)
         }

@@ -27,6 +27,7 @@ import java.util.TimeZone
 import java.time.format.DateTimeFormatter
 import java.time.format.TextStyle
 import java.time.LocalDateTime
+import android.view.View
 
 
 class CalenderWidgetLarge : AppWidgetProvider() {
@@ -83,8 +84,11 @@ class CalenderWidgetLarge : AppWidgetProvider() {
 
             val apiData = SharedPreferences.read("championshipData", "")
             if (apiData != "") {
+                views.setViewVisibility(R.id.main_layout, View.VISIBLE)
+                views.setViewVisibility(R.id.sync_data, View.GONE)
                 val parsedApiData = JSONObject(apiData)
                 val championshipArray = parsedApiData.getJSONArray(SharedPreferences.read(appWidgetId.toString(), ""))
+
                 var startDay = ""
                 var endDay = ""
                 var month = ""
@@ -549,6 +553,9 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                         break
                     }
                 }
+            }else{
+                views.setViewVisibility(R.id.main_layout, View.GONE)
+                views.setViewVisibility(R.id.sync_data, View.VISIBLE)
             }
             appWidgetManager?.updateAppWidget(appWidgetId, views)
         }
