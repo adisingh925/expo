@@ -29,6 +29,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.core.content.res.ResourcesCompat
+import android.view.View
 
 class DriverWidgetProvider : AppWidgetProvider() {
 
@@ -43,10 +44,19 @@ class DriverWidgetProvider : AppWidgetProvider() {
             val views = RemoteViews(context?.packageName, R.layout.driver_widget)
             val uuid = SharedPreferences.read("driver_uuid", "")
             val apiKey = SharedPreferences.read("driver_apiKey", "")
+
+            if(uuid == "" || apiKey == "") {
+                views.setViewVisibility(R.id.main_layout, View.GONE)
+                views.setViewVisibility(R.id.select_driver, View.VISIBLE)
+                return
+            }
+
+            views.setViewVisibility(R.id.main_layout, View.VISIBLE)
+            views.setViewVisibility(R.id.select_driver, View.GONE)
+
             val response: JSONObject = JSONObject()
             CoroutineScope(Dispatchers.IO).launch {
-                val url =
-                    URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_driver_details_and_position?driver_season_team_id=$uuid")
+                val url = URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_driver_details_and_position?driver_season_team_id=$uuid")
                 val connection = url.openConnection() as HttpURLConnection
 
                 // Set request method

@@ -29,6 +29,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.core.content.res.ResourcesCompat
+import android.view.View
 
 class TeamWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
@@ -43,6 +44,16 @@ class TeamWidgetProvider : AppWidgetProvider() {
             val response: JSONObject = JSONObject()
             val uuid = SharedPreferences.read("team_uuid", "")
             val apiKey = SharedPreferences.read("team_apiKey", "")
+
+            if(uuid == "" || apiKey == ""){
+                views.setViewVisibility(R.id.main_layout, View.GONE)
+                views.setViewVisibility(R.id.team_select, View.VISIBLE)
+                return
+            }
+
+            views.setViewVisibility(R.id.main_layout, View.VISIBLE)
+            views.setViewVisibility(R.id.team_select, View.GONE)
+
             CoroutineScope(Dispatchers.IO).launch {
                 val url = URL("https://rcqdwlyzxtexhdlchxhj.supabase.co/rest/v1/rpc/get_team_details_and_stats?team_season_driver_id=$uuid")
                 val connection = url.openConnection() as HttpURLConnection
