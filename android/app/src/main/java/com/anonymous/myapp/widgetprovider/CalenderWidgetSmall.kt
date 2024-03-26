@@ -22,6 +22,11 @@ import java.time.ZonedDateTime
 import java.util.Date
 import java.util.Locale
 import androidx.core.content.res.ResourcesCompat
+import java.time.Instant
+import java.util.TimeZone
+import java.time.format.DateTimeFormatter
+import java.time.format.TextStyle
+import java.time.LocalDateTime
 
 class CalenderWidgetSmall : AppWidgetProvider() {
     override fun onUpdate(
@@ -88,10 +93,14 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                     for (date in 0 until datesArray.length()) {
                         val dateObject = datesArray.getJSONObject(date)
                         val date = dateObject.getString("date")
-                        val parsedDate =
-                            SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(date)
 
-                        if (parsedDate.after(Date())) {
+                        val utcInstant = Instant.parse(date)
+                        val defaultTimeZone = TimeZone.getDefault().toZoneId()
+                        val localTime = utcInstant.atZone(defaultTimeZone).toLocalDateTime()
+
+                        val parsedDate = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(date)
+
+                        if (localTime.isAfter(LocalDateTime.now())) {
                             color = Color.parseColor(country.getString("color"))
                             views.setImageViewBitmap(
                                 R.id.country,
@@ -134,10 +143,11 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                                 )
                             )
 
-                            val dayOfMonth =
-                                SimpleDateFormat("dd", Locale.getDefault()).format(parsedDate)
-                            val shortMonthName =
-                                SimpleDateFormat("MMM", Locale.getDefault()).format(parsedDate)
+                            val dayOfMonth = localTime.dayOfMonth
+                            val shortMonthName = localTime.month.getDisplayName(
+                                TextStyle.SHORT,
+                                Locale.getDefault()
+                            )
                             month = shortMonthName
                             views.setImageViewBitmap(
                                 R.id.current_date,
@@ -152,8 +162,7 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                                     210
                                 )
                             )
-                            val time24Hour =
-                                SimpleDateFormat("HH:mm", Locale.getDefault()).format(parsedDate)
+                            val time24Hour = "${localTime.hour.toString().padStart(2, '0')}:${localTime.minute.toString().padStart(2, '0')}"
                             views.setImageViewBitmap(
                                 R.id.time,
                                 buildUpdate(
@@ -169,8 +178,8 @@ class CalenderWidgetSmall : AppWidgetProvider() {
                             )
 
                             val duration = Duration.between(
-                                ZonedDateTime.now(ZoneId.of("UTC")),
-                                ZonedDateTime.ofInstant(parsedDate.toInstant(), ZoneId.of("UTC"))
+                                ZonedDateTime.now(),
+                                ZonedDateTime.of(localTime, ZoneId.systemDefault())
                             )
 
                             // Extract the days, hours, and minutes from the duration
