@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="207dp"
     android:background="@color/black"
     android:orientation="horizontal"
     android:padding="10dp">
@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/sync_data"
         android:layout_width="match_parent"
-        android:text="Apri GPK per sincronizzare i dati"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:layout_height="match_parent"/>
+        android:text="Apri GPK per sincronizzare i dati"
+        android:textColor="@color/white" />
 
     <LinearLayout
         android:id="@+id/main_layout"
@@ -203,6 +203,14 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#FF0000" />
+
+        <LinearLayout
+            android:id="@+id/l5"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="#FF0000" />
     </LinearLayout>
 
     <LinearLayout
@@ -213,6 +221,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/rl11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -237,6 +246,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -261,6 +271,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -286,6 +297,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -310,6 +322,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp">
@@ -335,6 +348,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl32"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -359,6 +373,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
@@ -384,6 +399,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -398,6 +414,57 @@
 
             <ImageView
                 android:id="@+id/next4_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="18.00"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/next5_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="9"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/next5_other_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Race"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/next5_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="SAB"
+                android:textColor="#4972b4"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/next5_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

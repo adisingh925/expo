@@ -86,6 +86,23 @@ class CalenderWidgetLarge : AppWidgetProvider() {
             if (apiData != "") {
                 views.setViewVisibility(R.id.main_layout, View.VISIBLE)
                 views.setViewVisibility(R.id.sync_data, View.GONE)
+                views.setViewVisibility(R.id.l1, View.INVISIBLE)
+                views.setViewVisibility(R.id.l2, View.INVISIBLE)
+                views.setViewVisibility(R.id.l3, View.INVISIBLE)
+                views.setViewVisibility(R.id.l4, View.INVISIBLE)
+                views.setViewVisibility(R.id.l5, View.INVISIBLE)
+
+                views.setViewVisibility(R.id.rl11, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl12, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl21, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl22, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl31, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl32, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl41, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl42, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl51, View.INVISIBLE)
+                views.setViewVisibility(R.id.rl52, View.INVISIBLE)
+
                 val parsedApiData = JSONObject(apiData)
                 val championshipArray = parsedApiData.getJSONArray(SharedPreferences.read(appWidgetId.toString(), ""))
 
@@ -105,10 +122,13 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                         val localTime = utcInstant.atZone(defaultTimeZone).toLocalDateTime()
 
                         val dayOfMonth = localTime.dayOfMonth
-                        val time24Hour = "${localTime.hour.toString().padStart(2, '0')}:${localTime.minute.toString().padStart(2, '0')}"
+                        val time24Hour = "${
+                            localTime.hour.toString().padStart(2, '0')
+                        }:${localTime.minute.toString().padStart(2, '0')}"
 
                         val dayOfWeek = localTime.dayOfWeek
-                        val dayOfWeekShort = dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault())
+                        val dayOfWeekShort =
+                            dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault())
                         val timeZoneLocale = Locale.getDefault(Locale.Category.FORMAT)
                         val formattedDate = dayOfWeekShort.toUpperCase(timeZoneLocale)
 
@@ -117,6 +137,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                         views.setInt(R.id.l2, "setBackgroundColor", color);
                         views.setInt(R.id.l3, "setBackgroundColor", color);
                         views.setInt(R.id.l4, "setBackgroundColor", color);
+                        views.setInt(R.id.l5, "setBackgroundColor", color);
 
                         if (localTime.isAfter(LocalDateTime.now())) {
                             if (x == -1) {
@@ -131,7 +152,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                         color,
                                         Align.LEFT,
                                         0f,
-                                        450
+                                        600
                                     )
                                 )
                                 views.setImageViewBitmap(
@@ -300,8 +321,13 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                 )
 
                                 x = date
-                            }else{
+                            } else {
                                 if ((date - x) == 1) {
+                                    views.setViewVisibility(R.id.l1, View.VISIBLE)
+
+                                    views.setViewVisibility(R.id.rl11, View.VISIBLE)
+                                    views.setViewVisibility(R.id.rl12, View.VISIBLE)
+
                                     views.setImageViewBitmap(
                                         R.id.next1_date,
                                         buildUpdate(
@@ -360,6 +386,10 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                 }
 
                                 if ((date - x) == 2) {
+                                    views.setViewVisibility(R.id.rl21, View.VISIBLE)
+                                    views.setViewVisibility(R.id.rl22, View.VISIBLE)
+                                    views.setViewVisibility(R.id.l2, View.VISIBLE)
+
                                     views.setImageViewBitmap(
                                         R.id.next2_date,
                                         buildUpdate(
@@ -418,6 +448,10 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                 }
 
                                 if ((date - x) == 3) {
+                                    views.setViewVisibility(R.id.rl31, View.VISIBLE)
+                                    views.setViewVisibility(R.id.rl32, View.VISIBLE)
+                                    views.setViewVisibility(R.id.l3, View.VISIBLE)
+
                                     views.setImageViewBitmap(
                                         R.id.next3_date,
                                         buildUpdate(
@@ -476,6 +510,10 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                 }
 
                                 if ((date - x) == 4) {
+                                    views.setViewVisibility(R.id.rl41, View.VISIBLE)
+                                    views.setViewVisibility(R.id.rl42, View.VISIBLE)
+                                    views.setViewVisibility(R.id.l4, View.VISIBLE)
+
                                     views.setImageViewBitmap(
                                         R.id.next4_date,
                                         buildUpdate(
@@ -532,6 +570,68 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                         )
                                     )
                                 }
+
+                                if ((date - x) == 5) {
+                                    views.setViewVisibility(R.id.rl51, View.VISIBLE)
+                                    views.setViewVisibility(R.id.rl52, View.VISIBLE)
+                                    views.setViewVisibility(R.id.l5, View.VISIBLE)
+
+                                    views.setImageViewBitmap(
+                                        R.id.next5_date,
+                                        buildUpdate(
+                                            dayOfMonth.toString(),
+                                            context,
+                                            35f + fontSizeOffset.toFloat(),
+                                            font,
+                                            Color.parseColor("#808080"),
+                                            Align.LEFT,
+                                            0f,
+                                            300
+                                        )
+                                    )
+
+                                    views.setImageViewBitmap(
+                                        R.id.next5_other_name,
+                                        buildUpdate(
+                                            dateObject.getString("name"),
+                                            context,
+                                            35f + fontSizeOffset.toFloat(),
+                                            font,
+                                            Color.parseColor("#ffffff"),
+                                            Align.RIGHT,
+                                            200f,
+                                            210
+                                        )
+                                    )
+
+                                    views.setImageViewBitmap(
+                                        R.id.next5_name,
+                                        buildUpdate(
+                                            formattedDate,
+                                            context,
+                                            35f + fontSizeOffset.toFloat(),
+                                            font,
+                                            Color.parseColor("#808080"),
+                                            Align.LEFT,
+                                            0f,
+                                            300
+                                        )
+                                    )
+
+                                    views.setImageViewBitmap(
+                                        R.id.next5_time,
+                                        buildUpdate(
+                                            time24Hour,
+                                            context,
+                                            35f + fontSizeOffset.toFloat(),
+                                            font,
+                                            Color.parseColor("#808080"),
+                                            Align.RIGHT,
+                                            200f,
+                                            210
+                                        )
+                                    )
+                                }
                             }
                         }
                     }
@@ -553,7 +653,7 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                         break
                     }
                 }
-            }else{
+            } else {
                 views.setViewVisibility(R.id.main_layout, View.GONE)
                 views.setViewVisibility(R.id.sync_data, View.VISIBLE)
             }
