@@ -2,7 +2,7 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="1800000"
-    android:minWidth="100dp"
+    android:minWidth="150dp"
     android:minHeight="100dp"
     android:previewImage="@drawable/small_calender"
     android:configure="com.anonymous.myapp.CalenderWidgetSmallConfigurationActivity"

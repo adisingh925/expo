@@ -156,7 +156,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                         buildUpdate(
                             parsedApiData.getString("number"),
                             context,
-                            25f + fontSizeOffset.toFloat(),
+                            30f + fontSizeOffset.toFloat(),
                             font,
                             color,
                             Align.LEFT,
@@ -170,7 +170,7 @@ class DriverWidgetProvider : AppWidgetProvider() {
                         buildUpdate(
                             parsedApiData.getString("team"),
                             context,
-                            25f + fontSizeOffset.toFloat(),
+                            30f + fontSizeOffset.toFloat(),
                             font,
                             Color.parseColor("#ffffff"),
                             Align.LEFT,

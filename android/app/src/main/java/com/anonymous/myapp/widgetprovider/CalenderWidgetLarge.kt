@@ -211,8 +211,8 @@ class CalenderWidgetLarge : AppWidgetProvider() {
                                         font,
                                         color,
                                         Align.RIGHT,
-                                        700f,
-                                        705
+                                        450f,
+                                        455
                                     )
                                 )
 
